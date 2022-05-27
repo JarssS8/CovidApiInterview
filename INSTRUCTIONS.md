@@ -16,20 +16,21 @@ them.
 
 ## Guidelines
 
-  - Approach this assessment if as you were developing a real world project. We
-    want to see how you conduct your engineering practice (project structure,
-    code quality, readability, documentation and so on). GitHub Actions are
-    enabled for this repo, so feel free to use them.
-  - The one week limit is to be able to give rapid feedback, you can have more
-    time, just send us an email. It’s OK if you haven’t completed all the
-    requirements, the exercise is meant to start a discussion. Remember:
-    Quality over Quantity.
-  - When you're complete, make sure all of your code is pushed up to this repo
-    and let us know.
-  - You're free to use whatever tech stack you're comfortable with, just make
-    sure the stack makes sense given the assignment
+- Approach this assessment if as you were developing a real world project. We
+  want to see how you conduct your engineering practice (project structure,
+  code quality, readability, documentation and so on). GitHub Actions are
+  enabled for this repo, so feel free to use them.
+- The one week limit is to be able to give rapid feedback, you can have more
+  time, just send us an email. It’s OK if you haven’t completed all the
+  requirements, the exercise is meant to start a discussion. Remember:
+  Quality over Quantity.
+- When you're complete, make sure all of your code is pushed up to this repo
+  and let us know.
+- You're free to use whatever tech stack you're comfortable with, just make
+  sure the stack makes sense given the assignment
 
 ## The Details
+
 The goal of this assessment is to produce a web application written in Java or
 Scala, using data available in this repository. This application covers the
 following requirements:
@@ -38,17 +39,18 @@ following requirements:
 
 For this endpoint, given a country name, and date (eg. 14-06-2020), get the daily
 infections and deaths up until, and including, the specified date. For bonus points,
-make the test partial/fuzzy (e.g.  entering 'Zimb' will result in 'Zimbabwe').
+make the test partial/fuzzy (e.g. entering 'Zimb' will result in 'Zimbabwe').
 
 ### Reports:
 
 This endpoint will return to the user the following reports:
-  - 10 countries with the highest vaccinations (with count), and countries
-    with lowest number of vaccinations.
-  - 10 countries with the highest infections per 100k inhabitants (with count)
-  - Bonus: If we consider all populations wants to become fully vaccinated (there is
-    no such thing as an Anti-Vaxxer), print countries that haven't vaccinated their
-    whole population with at least one shot or jab.
+
+- 10 countries with the highest vaccinations (with count), and countries
+  with lowest number of vaccinations.
+- 10 countries with the highest infections per 100k inhabitants (with count)
+- Bonus: If we consider all populations wants to become fully vaccinated (there is
+  no such thing as an Anti-Vaxxer), print countries that haven't vaccinated their
+  whole population with at least one shot or jab.
 
 ## Setup
 
