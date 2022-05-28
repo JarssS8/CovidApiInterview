@@ -5,15 +5,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CountryQueryDto implements Serializable {
-
-    private String country;
-    private long infected;
-    private long deaths;
-    private String date;
-
+public class ReportsDto implements Serializable {
+    private String reportName;
+    private List<CountryReportDto> countries;
 }

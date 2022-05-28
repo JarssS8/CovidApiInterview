@@ -1,7 +1,6 @@
 package com.jars.covid_20052022_adriancorral.exceptionhandling;
 
-import com.jars.covid_20052022_adriancorral.exceptionhandling.exceptions.MoreThanOneOccurrence;
-import com.jars.covid_20052022_adriancorral.exceptionhandling.exceptions.NotCountryFoundException;
+import com.jars.covid_20052022_adriancorral.exceptionhandling.exceptions.*;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,6 +28,29 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     public ResponseEntity<Object> handleGeneralException(NotCountryFoundException e, WebRequest request) {
         HttpHeaders headers = new HttpHeaders();
         List<ErrorItem> errorItems = Stream.of(new ErrorItem("No Country Found", "404",
+                e.getMessage())).collect(Collectors.toList());
+        return handleExceptionInternal(e, errorItems, headers, HttpStatus.NOT_FOUND, request);
+    }
+
+    @ExceptionHandler(NotCaseFoundException.class)
+    public ResponseEntity<Object> handleGeneralException(NotCaseFoundException e, WebRequest request) {
+        HttpHeaders headers = new HttpHeaders();
+        List<ErrorItem> errorItems = Stream.of(new ErrorItem("No Case Found", "404",
+                e.getMessage())).collect(Collectors.toList());
+        return handleExceptionInternal(e, errorItems, headers, HttpStatus.NOT_FOUND, request);
+    }
+
+    @ExceptionHandler(InvalidDateFormat.class)
+    public ResponseEntity<Object> handleGeneralException(InvalidDateFormat e, WebRequest request) {
+        HttpHeaders headers = new HttpHeaders();
+        List<ErrorItem> errorItems = Stream.of(new ErrorItem("Invalid Date Format", "403",
+                e.getMessage())).collect(Collectors.toList());
+        return handleExceptionInternal(e, errorItems, headers, HttpStatus.NOT_FOUND, request);
+    }
+    @ExceptionHandler(InvalidCountryName.class)
+    public ResponseEntity<Object> handleGeneralException(InvalidCountryName e, WebRequest request) {
+        HttpHeaders headers = new HttpHeaders();
+        List<ErrorItem> errorItems = Stream.of(new ErrorItem("Invalid Country Name", "403",
                 e.getMessage())).collect(Collectors.toList());
         return handleExceptionInternal(e, errorItems, headers, HttpStatus.NOT_FOUND, request);
     }

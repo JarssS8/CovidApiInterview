@@ -1,13 +1,13 @@
 package com.jars.covid_20052022_adriancorral.repository;
 
-import com.jars.covid_20052022_adriancorral.dto.CountryQueryDto;
+import com.jars.covid_20052022_adriancorral.dto.CountryReportDto;
 import com.jars.covid_20052022_adriancorral.entity.Country;
 import com.jars.covid_20052022_adriancorral.exceptionhandling.exceptions.MoreThanOneOccurrence;
 import com.jars.covid_20052022_adriancorral.exceptionhandling.exceptions.NotCountryFoundException;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.util.List;
 
 @Repository
 public class CountryRepositoryImpl implements CountryRepository {
@@ -31,5 +31,17 @@ public class CountryRepositoryImpl implements CountryRepository {
         }
 
         return country.getCode();
+    }
+
+    @Override
+    public List<CountryReportDto> find10CountriesWithHighestInfectionsPer100k() {
+        Query query = entityManager.createNativeQuery("SELECT countries.name AS countryName, " +
+                "(SUM(infections)*100000)/population AS infectionsPer100k " +
+                "FROM countries " +
+                "JOIN cases c ON countries.code = c.iso_country " +
+                "GROUP BY countryName, population " +
+                "ORDER BY infectionsPer100k DESC " +
+                "LIMIT 10;");
+        return query.getResultList();
     }
 }

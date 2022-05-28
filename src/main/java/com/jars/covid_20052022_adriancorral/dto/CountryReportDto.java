@@ -7,13 +7,9 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class CountryQueryDto implements Serializable {
-
-    private String country;
-    private long infected;
-    private long deaths;
-    private String date;
-
+@AllArgsConstructor
+public class CountryReportDto implements Serializable {
+    private String countryName;
+    private long value;
 }

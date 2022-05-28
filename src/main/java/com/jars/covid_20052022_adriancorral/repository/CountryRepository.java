@@ -1,15 +1,10 @@
 package com.jars.covid_20052022_adriancorral.repository;
 
-import com.jars.covid_20052022_adriancorral.dto.CountryQueryDto;
-import com.jars.covid_20052022_adriancorral.entity.Country;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Repository;
+import com.jars.covid_20052022_adriancorral.dto.CountryReportDto;
 
-import java.time.LocalDate;
+import java.util.List;
 
 public interface CountryRepository{
-
     String findCountryCodeByPartialName(String name);
+    List<CountryReportDto> find10CountriesWithHighestInfectionsPer100k();
 }
