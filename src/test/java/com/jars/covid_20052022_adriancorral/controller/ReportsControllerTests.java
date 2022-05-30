@@ -1,9 +1,7 @@
 package com.jars.covid_20052022_adriancorral.controller;
 
-import com.jars.covid_20052022_adriancorral.dto.CountryQueryDto;
 import com.jars.covid_20052022_adriancorral.dto.CountryReportDto;
 import com.jars.covid_20052022_adriancorral.dto.ReportsDto;
-import com.jars.covid_20052022_adriancorral.service.InfectionsService;
 import com.jars.covid_20052022_adriancorral.service.ReportsService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +19,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(ReportsController.class)
-public class ReportsControllerTests {
+class ReportsControllerTests {
 
     @Autowired
     MockMvc mockMvc;

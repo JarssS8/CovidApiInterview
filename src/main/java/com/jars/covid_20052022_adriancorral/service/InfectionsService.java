@@ -5,7 +5,6 @@ import com.jars.covid_20052022_adriancorral.exceptionhandling.exceptions.Invalid
 import com.jars.covid_20052022_adriancorral.exceptionhandling.exceptions.InvalidDateFormat;
 import com.jars.covid_20052022_adriancorral.repository.CaseRepository;
 import com.jars.covid_20052022_adriancorral.repository.CountryRepository;
-import com.jars.covid_20052022_adriancorral.repository.VaccinationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,6 @@
 package com.jars.covid_20052022_adriancorral.service;
 
 import com.jars.covid_20052022_adriancorral.dto.ReportsDto;
-import com.jars.covid_20052022_adriancorral.repository.CaseRepository;
 import com.jars.covid_20052022_adriancorral.repository.CountryRepository;
 import com.jars.covid_20052022_adriancorral.repository.VaccinationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +11,6 @@ import java.util.List;
 
 @Service
 public class ReportsService {
-
-
-    @Autowired
-    private CaseRepository caseRepository;
 
     @Autowired
     private CountryRepository countryRepository;

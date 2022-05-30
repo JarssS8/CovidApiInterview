@@ -15,7 +15,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(InfectionsController.class)
-public class InfectionsControllerTests {
+class InfectionsControllerTests {
 
     @Autowired
     MockMvc mockMvc;
